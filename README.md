@@ -21,8 +21,7 @@ insert into _TCASendMessage
 )
 select 1                            AS CompanySeq,	
        ISNULL((SELECT MAX(SendMessageID) FROM _TCASendMessage),0)+1 AS SendMessageID,	
-       --ISNULL((SELECT TOP 1 UserSeq FROM _TCAUser WHERE UserName = '김보라'),0) AS SendUserSeq,	
-       27520                        AS SendUserSeq, -- select * from _TCAUser where UserSeq = 27205
+       27520                        AS SendUserSeq, -- select * from _TCAUser where UserSeq = 27205 or UserName like '%김철웅%'
        1                            AS SendMessageType,	
        N'test'                      AS Subject,	
        N'테스트입니다.'             AS SendMessage,	
